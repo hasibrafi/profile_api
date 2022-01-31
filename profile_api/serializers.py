@@ -1,0 +1,11 @@
+import imp
+from rest_framework import serializers
+
+
+# Serializers
+
+class HelloSerializer(serializers.Serializer):
+    '''Serializes a name field for our APIView'''
+
+    name = serializers.CharField(max_length=20)
+    
