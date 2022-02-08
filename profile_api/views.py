@@ -11,6 +11,7 @@ from rest_framework import status
 from rest_framework import viewsets
 
 from . import serializers
+from . import models 
 
 # Create your views here.
 
@@ -118,6 +119,13 @@ class HelloViewSet(viewsets.ViewSet):
         '''Handle destroying an object by the ID'''
 
         return Response({'http_method':'DELETE'})
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    '''Handle creating and updating profiles'''
+
+    serializer_class = serializers.UserProfileSerializer
+
+    queryset = models.UserProfile.objects.all()
      
 
 
